@@ -15,6 +15,16 @@ export default class HeaderTextExample extends Component {
       <Container style={{backgroundColor: '#f8f8f8'}}>
         <Header style={styles.containerHeader} >
           <Text style={styles.header}><Text style={styles.headerBold}>mandiri</Text> antrian</Text>
+          <TouchableOpacity
+          style={{position: "absolute", right:20, top: 15}}
+          onPress={() => Actions.Auth()}
+          >
+            <Image
+              source={require('./img/logout.png')}
+              style={{ width:30, height: 30}}
+            />
+          </TouchableOpacity>
+         
         </Header>
 
         <View style={{backgroundColor: '#f8f8f8'}}>
@@ -96,7 +106,7 @@ export default class HeaderTextExample extends Component {
                     onPress={() => {Actions.OngoingQueue()}}
                     >
                       <Left>
-                        <Thumbnail  source={require('./img/ic_circle_queue_12.png')} />
+                        <Thumbnail  source={require('./img/ic_circle_queue_1.png')} />
                       </Left>
                       <Body>
                         <Text>Bank Mandiri Cabang BSD</Text>
@@ -120,7 +130,7 @@ export default class HeaderTextExample extends Component {
                     onPress={() => {Actions.CancelQueue()}}
                     >
                       <Left>
-                        <Thumbnail  source={require('./img/ic_circle_queue_12.png')} />
+                        <Thumbnail  source={require('./img/ic_circle_queue_1.png')} />
                       </Left>
                       <Body>
                         <Text>Bank Mandiri Cabang BSD</Text>
@@ -137,7 +147,7 @@ export default class HeaderTextExample extends Component {
                     onPress={() => {Actions.AfterQueue()}}
                     >
                           <Left>
-                            <Thumbnail  source={require('./img/ic_circle_queue_6.png')} />
+                            <Thumbnail  source={require('./img/ic_circle_queue_1.png')} />
                           </Left>
                           <Body>
                             <Text>Bank Mandiri Cabang Bekasi Timur</Text>

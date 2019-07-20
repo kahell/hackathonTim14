@@ -91,8 +91,13 @@ export default class AfterQueue extends Component {
               fontFamily: 'Myriad Pro Regular',
               color:'#333333', 
               lineHeight: 23, fontSize:16, marginTop: 14, textAlign: "center"}}>
-              Bagaimana pelayanan kamu?
+              Bagaimana pelayanan kami?
             </Text>
+
+            <Image
+              source={require('./img/group.png')}
+              style={{marginTop: 15}}
+            />
             
           </View>
           <View style={{

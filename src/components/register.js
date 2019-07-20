@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Toast ,Content, Form, Item, Input, Button, Text } from 'native-base';
-import {StyleSheet, Alert} from 'react-native';
+import { Container, Toast ,Content, Form, Item, Input, Button, Text,Label } from 'native-base';
+import {StyleSheet, Alert, View} from 'react-native';
 
 export default class Register extends Component {
   
@@ -10,6 +10,8 @@ export default class Register extends Component {
     this.state = {
       username: "",
       password: "",
+      repeatPassword: "",
+      phone: "",
       message: "",
       errors: {},
       show: true,
@@ -22,25 +24,21 @@ export default class Register extends Component {
     const user = {
       username: this.state.username,
       password: this.state.password,
+      repeatPassword: this.state.repeatPassword,
+      phone: this.state.phone,
     };
 
-    console.log(user);
-    if(user.username == '' || user.password == ''){
+    if(user.username == '' || user.password == '' 
+    || user.repeatPassword == '' || user.phone == '' ){
       Alert.alert(
         'Oops Sorry!',
-        'Username or Password Can Not Empty',
+        'All Field Must Be Fill',
         [
           {text: 'OK', onPress: () => console.log('OK Pressed')},
         ]
       );
     }else{
-      Alert.alert(
-        'Success Register!',
-        'Success',
-        [
-          {text: 'OK', onPress: () => console.log('OK Pressed')},
-        ]
-      );
+      this.props.navigation.navigate('RegisterSuccess');
     }
     
   }
@@ -57,20 +55,41 @@ export default class Register extends Component {
               onChangeText={(username) => this.setState({username})}
               />
             </Item>
-            <Item last>
+
+            <Item>
               <Input 
               secureTextEntry={true} placeholder="Password" 
               value={this.state.password}
               onChangeText={(password) => this.setState({password})}
               />
             </Item>
+
+            <Item>
+              <Input 
+              secureTextEntry={true} placeholder="Repeat Password" 
+              value={this.state.repeatPassword}
+              onChangeText={(repeatPassword) => this.setState({repeatPassword})}
+              />
+            </Item>
+
+            <Item last>
+              <Label>+62</Label>
+              <Input 
+              keyboardType={'numeric'} placeholder="Nomor Telepon" 
+              value={this.state.phone}
+              onChangeText={(phone) => this.setState({phone})}
+              />
+            </Item>
+            
             <Button 
-            style={styles.lButton}
-            onPress={() => this.onSubmit()}
-            >
-              <Text style={{fontSize: 16, letterSpacing: 0.2}}>REGISTER</Text>
-            </Button>
+              style={styles.lButton}
+              onPress={() => this.onSubmit()}
+              >
+                <Text style={{fontSize: 16, letterSpacing: 0.2}}>REGISTER</Text>
+              </Button>
+
           </Form>
+
         </Content>
       </Container>
     );

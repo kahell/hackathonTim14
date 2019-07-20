@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
-import { Container, Header, Left, Body, Right, Button, Title, Text, List, ListItem, Thumbnail } from 'native-base';
+import { Container, Header, Left, Body, Right, Button, Title, Text, List, ListItem, Thumbnail, Tab, Tabs } from 'native-base';
 import {StyleSheet, View, Image, TouchableOpacity, ScrollView, ImageBackground} from 'react-native';
+
+import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
+
 export default class HeaderTextExample extends Component {
+
+  goToChooseBank = () =>{
+    this.props.navigation.navigate('ChooseBank');
+  }
 
   render() {
     
@@ -17,80 +24,129 @@ export default class HeaderTextExample extends Component {
 
             <View style={{flex: 1, flexDirection: 'row',
           justifyContent:'space-around'}}>
-
-              <View style={styles.box}>
-                <Image
-                  source={require('./img/id.png')}
+            <View style={styles.box}>
+              <Image
+                  source={require('./img/pelayanan.png')}
                   style={styles.currency}
                 />
-                <Text style={{paddingLeft: 12, color:"#b6b8ba", fontSize:15}}>Saldo IDR</Text>
-                <Text style={{paddingLeft: 12, color: "#333333", fontSize:20}}><Text style={{color:"#b6b8ba", fontSize: 12, marginTop: 120}}>IDR</Text> 233.100.000</Text>
-                <Button transparent style={styles.btnBox}>
-                  <Text style={styles.bTxtBox}>Detail</Text>
-                </Button>
-              </View>
+              <Text style={{color: "#fff", marginTop: 10}}>
+                Pelayanan
+              </Text>
+            </View>
 
-              <View style={styles.box}>
-                <Image
-                    source={require('./img/uk.png')}
-                    style={styles.currency}
-                  />
-                <Text style={{paddingLeft: 12, color:"#b6b8ba", fontSize:15}}>Saldo USD</Text>
-                <Text style={{paddingLeft: 12, color: "#333333", fontSize:20}}><Text style={{color:"#b6b8ba", fontSize: 12, marginTop: 120}}>USD</Text> 1666,20</Text>
-                <Button transparent style={styles.btnBox}>
-                  <Text style={styles.bTxtBox}>Detail</Text>
-                </Button>
-              </View>
+            <View style={styles.box}>
+              <Image
+                  source={require('./img/kesehatan.png')}
+                  style={styles.currency}
+                />
+              <Text style={{color: "#fff", marginTop: 10, opacity: 0.24}}>
+                Kesehatan
+              </Text>
+            </View>
+
+            <View style={styles.box}>
+              <Image
+                  source={require('./img/kecantikan.png')}
+                  style={styles.currency}
+                />
+              <Text style={{color: "#fff", marginTop: 10, opacity: 0.24}}>
+                Kecantikan
+              </Text>
+            </View>
+
+            <View style={styles.box}>
+              <Image
+                  source={require('./img/restoran.png')}
+                  style={styles.currency}
+                />
+              <Text style={{color: "#fff", marginTop: 10, opacity: 0.24}}>
+                Restoran
+              </Text>
+            </View>
 
             </View>
 
           </View>
-
-          <View style={{marginTop: 80, backgroundColor: '#fff'}}>
-              <Text style={{paddingTop: 15, paddingBottom: 15, paddingLeft: 16, fontWeight: 'bold'}}>Antrian Pelanggan</Text>
-          </View>
-
-          <View style={{marginTop: 20}}>
-            <TouchableOpacity block style={{marginLeft: 15, marginRight: 15, backgroundColor: '#f8f8f8', justifyContent: 'center',
-            borderWidth: 1,
-            borderColor: "#67b2e8",
-            borderStyle: "dashed"}}>
-              <Text style={{color: '#67b2e8', textAlign:'center', fontSize: 16, letterSpacing: 0.2, paddingTop: 10, paddingBottom: 10}}>BUAT ANTRIAN BARU</Text>
-            </TouchableOpacity>
-          </View>
-
-          <ScrollView style={{marginTop:15}}>
-            <List>
-              <ListItem avatar>
-                <Left>
-                  <Thumbnail  source={require('./img/ic_circle_queue_6.png')} />
-                </Left>
-                <Body>
-                  <Text>Bank Mandiri Cabang BSD</Text>
-                  <Text note>Antrian pembuatan KPR</Text>
-                  <Text>20 July 2019 12:00 PM </Text>
-                </Body>
-                <Right style={{position: 'absolute', bottom: 0, right: 0}}>
-                  <Text note>3 Hour 20 Mins </Text>
-                </Right>
-              </ListItem>
-              <ListItem avatar>
-                <Left>
-                  <Thumbnail  source={require('./img/ic_circle_queue_12.png')} />
-                </Left>
-                <Body>
-                  <Text>Bank Mandiri Cabang Bekasi Timur</Text>
-                  <Text note>Antrian Cetak Buku</Text>
-                  <Text>21 July 2019 12:00 PM </Text>
-                </Body>
-                <Right style={{position: 'absolute', bottom: 0, right: 0}}>
-                  <Text note>1 Day 22:10 </Text>
-                </Right>
-              </ListItem>
-            </List>
-          </ScrollView>
-          
         </View>
+
+        <Tabs>
+          <Tab heading="Akan Datang" 
+          tabStyle={{backgroundColor:"#003d79"}}
+          activeTabStyle={{backgroundColor: "#003d79", color: "#000"}}
+          textStyle={{color:"#67b2e8", fontSize:14, fontWeight:'bold'}}
+          activeTextStyle={{color:"#67b2e8", fontSize:14}}
+          >
+              <View style={{marginTop: 20}}>
+                  <TouchableOpacity block onPress={() => {this.goToChooseBank()}} style={{marginLeft: 15, marginRight: 15, backgroundColor: '#f8f8f8', justifyContent: 'center',
+                  borderWidth: 1,
+                  borderColor: "#67b2e8",
+                  borderStyle: "dashed"}}>
+                    <Text style={{color: '#67b2e8', textAlign:'center', fontSize: 16, letterSpacing: 0.2, paddingTop: 10, paddingBottom: 10}}>BUAT ANTRIAN BARU</Text>
+                  </TouchableOpacity>
+                </View>
+          </Tab>
+          <Tab heading="Berjalan" 
+          tabStyle={{backgroundColor:"#003d79"}}
+          activeTabStyle={{backgroundColor: "#003d79", color: "#000"}}
+          textStyle={{color:"#67b2e8", fontSize:14, fontWeight:'bold'}}
+          activeTextStyle={{color:"#67b2e8", fontSize:14}}
+          >
+                <ScrollView style={{marginTop:15}}>
+                  <List>
+                  <ListItem avatar>
+                      <Left>
+                        <Thumbnail  source={require('./img/ic_circle_queue_12.png')} />
+                      </Left>
+                      <Body>
+                        <Text>Bank Mandiri Cabang BSD</Text>
+                        <Text note>Teller</Text>
+                        <Text style={{fontSize:14, color:"#007aff"}}>BERLANGSUNG</Text>
+                      </Body>
+                    </ListItem>
+                  </List>
+                </ScrollView>
+          </Tab>
+          <Tab heading="Selesai" 
+          tabStyle={{backgroundColor:"#003d79"}}
+          activeTabStyle={{backgroundColor: "#003d79", color: "#000"}}
+          textStyle={{color:"#67b2e8", fontSize:14, fontWeight:'bold'}}
+          activeTextStyle={{color:"#67b2e8", fontSize:14}}
+          >
+            <ScrollView style={{marginTop:15}}>
+                  <List>
+                    <ListItem avatar>
+                      <Left>
+                        <Thumbnail  source={require('./img/ic_circle_queue_12.png')} />
+                      </Left>
+                      <Body>
+                        <Text>Bank Mandiri Cabang BSD</Text>
+                        <Text note>Teller</Text>
+                        <Text style={{position: 'relative', bottom: 0, left: 100, fontSize:14, color:"#ff3b30"}}>DIBATALKAN</Text>
+                      </Body>
+
+                      <Right style={{position: 'absolute', bottom: 0, left: 75}}>
+                       <Text style={{color:"#333333",fontSize:14} }>21 JULI 2019</Text>
+                      </Right>
+                    </ListItem>
+                    <ListItem avatar>
+                      <Left>
+                        <Thumbnail  source={require('./img/ic_circle_queue_6.png')} />
+                      </Left>
+                      <Body>
+                        <Text>Bank Mandiri Cabang Bekasi Timur</Text>
+                        <Text note>Teller</Text>
+                        <Text style={{position: 'relative', bottom: 0, left: 100, fontSize:14, color:"#4cd964"}}>SELESAI</Text>
+                      </Body>
+
+                      <Right style={{position: 'absolute', bottom: 0, left: 75}}>
+                       <Text style={{color:"#333333",fontSize:14} }>24 JULI 2019</Text>
+                      </Right>
+                    </ListItem>
+                  </List>
+                </ScrollView>
+          </Tab>
+        </Tabs>
+    
 
       </Container>
     );
@@ -126,27 +182,15 @@ const styles = StyleSheet.create({
     height: 139
   },
   box:{
-    width: 176, 
-    height: 156, 
-    backgroundColor: 'white',
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: '#ddd',
-    borderBottomWidth: 0,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 1,
+    height: 82, 
     marginLeft: 5,
     marginRight: 5,
     marginTop: 22,
+    alignItems: "center",
   },
   currency:{
-    marginTop: 12,
-    marginBottom: 12,
-    marginLeft: 12,
-    marginRight: 12,
+    width: 51,
+    height: 51,
   },
   btnBox:{
     backgroundColor: "#fff",

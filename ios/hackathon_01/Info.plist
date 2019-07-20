@@ -73,6 +73,18 @@
 		<string>rubicon-icon-font.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>MYRIADPRO-BOLD.OTF</string>
+		<string>MYRIADPRO-BOLDCOND.OTF</string>
+		<string>MYRIADPRO-BOLDCONDIT.OTF</string>
+		<string>MYRIADPRO-BOLDIT.OTF</string>
+		<string>MYRIADPRO-COND.OTF</string>
+		<string>MYRIADPRO-CONDIT.OTF</string>
+		<string>MyriadPro-Light.otf</string>
+		<string>MYRIADPRO-REGULAR.OTF</string>
+		<string>MYRIADPRO-SEMIBOLD.OTF</string>
+		<string>MYRIADPRO-SEMIBOLDIT.OTF</string>
+		<string>Myriad Pro Regular.ttf</string>
+		<string>Myriad Pro Semibold.ttf</string>
 	</array>
 </dict>
 </plist>

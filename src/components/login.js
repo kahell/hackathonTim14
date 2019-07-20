@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import { Container, Toast ,Content, Form, Item, Input, Button, Text } from 'native-base';
+import { Container, Content, Form, Item, Input, Button, Text } from 'native-base';
 import {StyleSheet, Alert} from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-export default class Login extends Component {
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {postLogin,setLogin} from '../actions/auth';
+
+class Login extends Component {
   
   constructor(props) {
     super(props)
@@ -24,27 +29,17 @@ export default class Login extends Component {
       password: this.state.password,
     };
 
-    if(user.username == "helfi" && user.password == "pangestu"){
+    if(user.username == '' || user.password == ''){
       Alert.alert(
-        'Success!',
-        'Success',
+        'Oops.. Something Wrong?',
+        'Username or Password must be fill!',
         [
-          {text: 'OK', onPress: () => console.log('OK Pressed')},
+          {text: 'OK', onPress: () => console.log("ERR")},
         ]
       );
-
-      this.props.navigation.navigate('Home');
     }else{
-      Alert.alert(
-        'Wrong Username & Password',
-        'Please try again.',
-        [
-          {text: 'OK', onPress: () => console.log('OK Pressed')},
-        ]
-      );
-    }
-
-    
+      Actions.Home()
+    }       
   }
 
   render() {
@@ -90,3 +85,17 @@ const styles = StyleSheet.create({
     paddingBottom: 10
   }
 });
+
+
+function mapStateToProps(state){
+  return{
+    users : state.users
+  };
+}
+function matchDispatchToProps(dispatch){
+  return bindActionCreators({
+    postLogin:postLogin,
+    setLogin:setLogin,
+  }, dispatch)
+}
+export default connect(mapStateToProps, matchDispatchToProps)(Login);

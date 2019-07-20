@@ -3,7 +3,7 @@ import { Container, Button, Text } from 'native-base';
 import {StyleSheet, View, Image, Alert,TouchableOpacity} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-export default class QueueSuccess extends Component {
+export default class AfterQueue extends Component {
   
   constructor(props) {
     super(props);
@@ -45,11 +45,12 @@ export default class QueueSuccess extends Component {
             
             <Text style={{
               fontFamily: 'Myriad Pro Regular',
+              fontWeight:"bold",
               textAlign: "center", 
               fontSize: 20, 
               color: "#003d79",
               marginTop: 50, 
-              marginBottom: 42}}>Yay, Antrian berhasil di buat!</Text>
+              marginBottom: 42}}>NOMOR ANTRIAN</Text>
             <Image
               source={require('./img/6.png')}
               style={styles.successImg}
@@ -58,13 +59,39 @@ export default class QueueSuccess extends Component {
               fontFamily: 'Myriad Pro Regular',
               color:'#b6b8ba', 
               lineHeight: 23, fontSize:14, marginTop: 42, marginLeft: 59, marginRight: 59, textAlign: "center"}}>
-              Silahkan datang ke cabang yang dipilih sesuai dengan waktu yang di tentukan.
+              Terimakasih telah menggunakan layanan kami
             </Text>
-            <Text style={{fontFamily: 'Myriad Pro Regular',marginTop: 24, fontWeight: "bold", fontSize: 16, lineHeight: 24, color: "#333333"}}>
-              Cabang Mandiri BSD
+
+            <Text style={{
+              fontFamily: 'Myriad Pro Regular',
+              color:'#b6b8ba', 
+              lineHeight: 23, fontSize:14, marginTop: 14, textAlign: "center"}}>
+              Customer Service
             </Text>
-            <Text style={{fontFamily: 'Myriad Pro Regular',marginTop: 4, fontWeight: "bold", fontSize: 20, lineHeight: 24, color: "#333333"}}>
-              Senin, 22 Juli 2019 12:30
+
+            <Text style={{
+              fontFamily: 'Myriad Pro Regular',
+              marginTop: 5, 
+              fontWeight: "bold", 
+              textAlign:"center",
+              fontSize: 18, 
+              lineHeight: 24, 
+              color: "#333333"}}>
+              SRI TRIWAHYUNI
+            </Text>
+
+            <Text style={{
+              fontFamily: 'Myriad Pro Regular',
+              color:'#b6b8ba', 
+              lineHeight: 23, fontSize:14, marginTop: 0, textAlign: "center"}}>
+              waktu Pelayanan 10:30 - 11:15
+            </Text>
+
+            <Text style={{
+              fontFamily: 'Myriad Pro Regular',
+              color:'#333333', 
+              lineHeight: 23, fontSize:16, marginTop: 14, textAlign: "center"}}>
+              Bagaimana pelayanan kamu?
             </Text>
             
           </View>
@@ -74,22 +101,7 @@ export default class QueueSuccess extends Component {
             alignContent: "center",
             alignItems: 'center' }}>
 
-            <Button block 
-              onPress={() => {alert}}
-              style={{
-              justifyContent: "center",
-              alignContent: "center",
-              alignItems: 'center', 
-              backgroundColor:"#ffff", 
-              borderRadius: 4, 
-              position: 'absolute',
-              bottom:0, right: 20, left: 20}}
-              onPress={() => this.canceled()}
-              >
-                <Text style={{fontWeight:"bold", fontFamily: 'Myriad Pro Regular',color:"#67b2e8",fontSize: 16, letterSpacing: 0.2, textAlign: "center"}}>BATALKAN ANTRIAN (29:59)</Text>
-              </Button>
-
-            {/* <Button block style={{
+            <Button block style={{
               justifyContent: "center",
               alignContent: "center",
               alignItems: 'center', 
@@ -99,8 +111,15 @@ export default class QueueSuccess extends Component {
               bottom:0, right: 20, left: 20}}
               onPress={() => {Actions.refresh({ key: Actions.Home() });}}
               >
-                <Text style={{fontFamily: 'Myriad Pro Regular',fontSize: 16, letterSpacing: 0.2, textAlign: "center"}}>SELESAI</Text>
-              </Button> */}
+                <Text style={{
+                  paddingBottom: 14,
+                  paddingTop:14,
+                  fontFamily: 'Myriad Pro Regular',
+                  color:"#ffffff",
+                  fontSize: 16, 
+                  letterSpacing: 0.2, 
+                  textAlign: "center"}}>SUBMIT</Text>
+              </Button>
           </View>
       </Container>
     );

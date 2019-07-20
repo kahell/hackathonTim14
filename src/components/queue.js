@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
-import { Container, Header, Content, List, ListItem, Left, Body, Right, Footer, Thumbnail, Text, Title, Form, Item, Picker, Icon, Label, Input, Button} from 'native-base';
-import {TouchableOpacity, View, Modal,TouchableHighlight, Image } from 'react-native';
+import { Container, Header, Content, Left, Right, Text, Title, Form, Item, Picker, Icon, Label, Input, Button} from 'native-base';
+import { Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class Queue extends Component {
@@ -28,7 +28,7 @@ export default class Queue extends Component {
     return (
       <Container>
         <Header style={{justifyContent: "center",backgroundColor: '#ffffff'}}>
-          <Title style={{color: '#333333', fontSize:15, position:'absolute',left: 16, top: 18, bottom: 14}}>{(this.props.bank != '')? this.props.bank: "Empty"}</Title>
+          <Title style={{fontFamily: 'Myriad Pro Regular', color: '#333333', fontSize:15, position:'absolute',left: 16, top: 18, bottom: 14}}>{(this.props.bank != '')? this.props.bank: "Empty"}</Title>
         </Header>
         <Content>
           <Form>
@@ -56,7 +56,9 @@ export default class Queue extends Component {
 
             <Item>
               <Left>
-                <Text style={{fontSize: 15, 
+                <Text style={{
+                  fontFamily: 'Myriad Pro Regular',
+                  fontSize: 15, 
                   color: "#333333",
                   paddingLeft: 10,
                   paddingTop: 21,
@@ -66,6 +68,7 @@ export default class Queue extends Component {
               <Right>
                 <Text style={
                   {
+                    fontFamily: 'Myriad Pro Regular',
                     color: "#333333",
                     paddingRight: 15,
                     paddingTop: 21,
@@ -78,7 +81,9 @@ export default class Queue extends Component {
 
             <Item>
               <Left>
-                <Text style={{fontSize: 15, 
+                <Text style={{
+                  fontFamily: 'Myriad Pro Regular',
+                  fontSize: 15, 
                   color: "#333333",
                   paddingLeft: 10,
                   paddingTop: 21,
@@ -87,7 +92,7 @@ export default class Queue extends Component {
               
               <Right>
                   <Image
-                  source={require('./img/6.png')}
+                  source={require('./img/0.png')}
                   style={{position:"relative",
                   right: 10, bottom: 0,
                   }}
@@ -97,7 +102,9 @@ export default class Queue extends Component {
 
             <Item>
               <Left>
-                <Text style={{fontSize: 15, 
+                <Text style={{
+                  fontFamily: 'Myriad Pro Regular',
+                  fontSize: 15, 
                   color: "#333333",
                   paddingLeft: 10,
                   paddingTop: 21,
@@ -107,6 +114,7 @@ export default class Queue extends Component {
               <Right>
                 <Text style={
                   {
+                    fontFamily: 'Myriad Pro Regular',
                     color: "#333333",
                     paddingRight: 15,
                     paddingTop: 21,
@@ -119,7 +127,9 @@ export default class Queue extends Component {
 
             <Item>
               <Left>
-                <Text style={{fontSize: 15, 
+                <Text style={{
+                  fontFamily: 'Myriad Pro Regular',
+                  fontSize: 15, 
                   color: "#333333",
                   paddingLeft: 10,
                   paddingTop: 21,
@@ -129,6 +139,7 @@ export default class Queue extends Component {
               <Right>
                 <Text style={
                   {
+                    fontFamily: 'Myriad Pro Regular',
                     color: "#333333",
                     paddingRight: 15,
                     paddingTop: 21,
@@ -146,7 +157,7 @@ export default class Queue extends Component {
               marginTop: 26,
               marginLeft: 16,
               marginRight: 16,}}>
-                  <Text style={{fontSize:16}}>BUAT</Text>
+                  <Text style={{fontFamily: 'Myriad Pro Regular', fontSize:16}}>BUAT</Text>
                 </Button>
           </Form>
 
@@ -154,14 +165,5 @@ export default class Queue extends Component {
         
       </Container>
     );
-  }
-}
-
-const styles = {
-  pickerStyle: {
-    marginLeft: 16,
-    marginTop: 16,
-    marginBottom: 16,
-    marginRight: 16,
   }
 }

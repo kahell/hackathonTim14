@@ -1,17 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { View, Text, StyleSheet,Image, ImageBackground,TouchableOpacity, Button } from 'react-native';
-import {
-  Container,
-  Header,
-  Body,
-  Form,
-  Item as FormItem,
-  Input,
-  Label,
-  Title,
-} from 'native-base';
+import { View, Text, StyleSheet,Image, ImageBackground,TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-
 
 export default class Auth extends Component {
   
@@ -20,7 +9,7 @@ export default class Auth extends Component {
     return (
       <Fragment>
         <View style={styles.body}>
-          <Text style={styles.title}>mandiri <Text style={styles.title2}>online</Text> </Text>
+          <Text style={styles.title}>mandiri <Text style={styles.title2}>antrian</Text> </Text>
           <View style={{
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -36,7 +25,7 @@ export default class Auth extends Component {
             source={require('./img/batik.png')}
             style={styles.backgroundImage}
           >
-              <Text style={styles.desc1}>Selamat Datang di<Text style={{fontWeight: "bold"}}> mandiri</Text> online! </Text>
+              <Text style={styles.desc1}>Selamat Datang di<Text style={{fontWeight: "bold"}}> mandiri</Text> antrian! </Text>
               <Text style={styles.desc2}>Terdepan dan terpercaya. Tumbuh bersama anda.</Text>
 
               <View style={styles.vBContainer}>
@@ -46,7 +35,8 @@ export default class Auth extends Component {
                     <View style = {{backgroundColor: '#67b2e8', 
                     color:'#fff',alignItems: 'center', width:156, height: 44, justifyContent: 'center', borderRadius: 4, marginRight: -20}}
                           >
-                        <Text style = {{color: 'white', fontSize: 16, letterSpacing: 0.2}}>LOGIN</Text>
+                        <Text style = {{color: 'white', fontSize: 16, letterSpacing: 0.2,
+                        fontFamily: 'Myriad Pro Regular'}}>LOGIN</Text>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -56,7 +46,7 @@ export default class Auth extends Component {
                     <View style = {{backgroundColor: '#67b2e8', 
                     color:'#fff',alignItems: 'center', width:156, height: 44, justifyContent: 'center', borderRadius: 4, marginLeft: -20}}
                           >
-                        <Text style = {{color: 'white', fontSize: 16, letterSpacing: 0.2}}>REGISTER</Text>
+                        <Text style = {{color: 'white', fontSize: 16, letterSpacing: 0.2,fontFamily: 'Myriad Pro Regular'}}>REGISTER</Text>
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -85,12 +75,14 @@ const styles = StyleSheet.create({
     fontSize: 32,
     textAlign: 'center',
     paddingBottom: 20,
+    fontFamily: 'Myriad Pro Regular'
   },
   title2:{
     color: '#fff',
     fontSize: 32,
     fontWeight: "normal",
     textAlign: 'center',
+    fontFamily: 'Myriad Pro Regular'
   },
   imgLogin:{
     height: 255,
@@ -116,6 +108,7 @@ const styles = StyleSheet.create({
     fontWeight: "normal",
     textAlign: 'center',
     paddingTop: 30,
+    fontFamily: 'Myriad Pro Regular',
   },
   desc2: {
     fontSize: 14,
@@ -123,12 +116,12 @@ const styles = StyleSheet.create({
     fontWeight: "normal",
     textAlign: 'center',
     paddingTop: 0,
+    fontFamily: 'Myriad Pro Regular'
   },
   vBContainer: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    // justifyContent: 'center',
     justifyContent: 'flex-end',
     position: 'absolute', bottom: 20
   },

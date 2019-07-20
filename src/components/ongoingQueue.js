@@ -3,7 +3,7 @@ import { Container, Button, Text } from 'native-base';
 import {StyleSheet, View, Image, Alert,TouchableOpacity} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-export default class QueueSuccess extends Component {
+export default class OngoingQueue extends Component {
   
   constructor(props) {
     super(props);
@@ -45,11 +45,12 @@ export default class QueueSuccess extends Component {
             
             <Text style={{
               fontFamily: 'Myriad Pro Regular',
+              fontWeight: "bold",
               textAlign: "center", 
               fontSize: 20, 
               color: "#003d79",
               marginTop: 50, 
-              marginBottom: 42}}>Yay, Antrian berhasil di buat!</Text>
+              marginBottom: 42}}>NOMOR ANTRIAN</Text>
             <Image
               source={require('./img/6.png')}
               style={styles.successImg}
@@ -74,7 +75,7 @@ export default class QueueSuccess extends Component {
             alignContent: "center",
             alignItems: 'center' }}>
 
-            <Button block 
+            {/* <Button block 
               onPress={() => {alert}}
               style={{
               justifyContent: "center",
@@ -87,9 +88,9 @@ export default class QueueSuccess extends Component {
               onPress={() => this.canceled()}
               >
                 <Text style={{fontWeight:"bold", fontFamily: 'Myriad Pro Regular',color:"#67b2e8",fontSize: 16, letterSpacing: 0.2, textAlign: "center"}}>BATALKAN ANTRIAN (29:59)</Text>
-              </Button>
+              </Button> */}
 
-            {/* <Button block style={{
+            <Button block style={{
               justifyContent: "center",
               alignContent: "center",
               alignItems: 'center', 
@@ -99,8 +100,12 @@ export default class QueueSuccess extends Component {
               bottom:0, right: 20, left: 20}}
               onPress={() => {Actions.refresh({ key: Actions.Home() });}}
               >
-                <Text style={{fontFamily: 'Myriad Pro Regular',fontSize: 16, letterSpacing: 0.2, textAlign: "center"}}>SELESAI</Text>
-              </Button> */}
+                <Text style={{
+                  fontWeight: "bold",
+                  color: "#fff",
+                  borderRadius: 4,
+                  fontFamily: 'Myriad Pro Regular',fontSize: 16, letterSpacing: 0.2, textAlign: "center"}}>SELESAI</Text>
+              </Button>
           </View>
       </Container>
     );

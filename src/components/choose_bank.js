@@ -6,7 +6,7 @@ import { Actions } from 'react-native-router-flux';
 export default class ChooseBank extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       username: "",

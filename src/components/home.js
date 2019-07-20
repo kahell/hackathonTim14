@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Left, Body, Right, Button, Title, Text, List, ListItem, Thumbnail, Tab, Tabs } from 'native-base';
-import {StyleSheet, View, Image, TouchableOpacity, ScrollView, ImageBackground} from 'react-native';
-
-import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
+import {StyleSheet, View, Image, TouchableOpacity, ScrollView} from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class HeaderTextExample extends Component {
 
@@ -15,10 +14,10 @@ export default class HeaderTextExample extends Component {
     return (
       <Container style={{backgroundColor: '#f8f8f8'}}>
         <Header style={styles.containerHeader} >
-          <Text style={styles.header}><Text style={styles.headerBold}>mandiri</Text> online</Text>
+          <Text style={styles.header}><Text style={styles.headerBold}>mandiri</Text> antrian</Text>
         </Header>
 
-        <View style={{backgroundColor: '#f8f8f8',}}>
+        <View style={{backgroundColor: '#f8f8f8'}}>
 
           <View style={styles.heading}>
 
@@ -29,7 +28,7 @@ export default class HeaderTextExample extends Component {
                   source={require('./img/pelayanan.png')}
                   style={styles.currency}
                 />
-              <Text style={{color: "#fff", marginTop: 10}}>
+              <Text style={{color: "#fff", marginTop: 10,fontFamily: 'Myriad Pro Regular'}}>
                 Pelayanan
               </Text>
             </View>
@@ -39,7 +38,7 @@ export default class HeaderTextExample extends Component {
                   source={require('./img/kesehatan.png')}
                   style={styles.currency}
                 />
-              <Text style={{color: "#fff", marginTop: 10, opacity: 0.24}}>
+              <Text style={{color: "#fff", marginTop: 10, opacity: 0.24,fontFamily: 'Myriad Pro Regular'}}>
                 Kesehatan
               </Text>
             </View>
@@ -49,7 +48,7 @@ export default class HeaderTextExample extends Component {
                   source={require('./img/kecantikan.png')}
                   style={styles.currency}
                 />
-              <Text style={{color: "#fff", marginTop: 10, opacity: 0.24}}>
+              <Text style={{color: "#fff", marginTop: 10, opacity: 0.24,fontFamily: 'Myriad Pro Regular'}}>
                 Kecantikan
               </Text>
             </View>
@@ -59,7 +58,7 @@ export default class HeaderTextExample extends Component {
                   source={require('./img/restoran.png')}
                   style={styles.currency}
                 />
-              <Text style={{color: "#fff", marginTop: 10, opacity: 0.24}}>
+              <Text style={{color: "#fff", marginTop: 10, opacity: 0.24,fontFamily: 'Myriad Pro Regular'}}>
                 Restoran
               </Text>
             </View>
@@ -73,27 +72,29 @@ export default class HeaderTextExample extends Component {
           <Tab heading="Akan Datang" 
           tabStyle={{backgroundColor:"#003d79"}}
           activeTabStyle={{backgroundColor: "#003d79", color: "#000"}}
-          textStyle={{color:"#67b2e8", fontSize:14, fontWeight:'bold'}}
-          activeTextStyle={{color:"#67b2e8", fontSize:14}}
+          textStyle={{color:"#67b2e8", fontSize:14, fontWeight:'bold',fontFamily: 'Myriad Pro Regular'}}
+          activeTextStyle={{color:"#67b2e8", fontSize:14,fontFamily: 'Myriad Pro Regular'}}
           >
               <View style={{marginTop: 20}}>
                   <TouchableOpacity block onPress={() => {this.goToChooseBank()}} style={{marginLeft: 15, marginRight: 15, backgroundColor: '#f8f8f8', justifyContent: 'center',
                   borderWidth: 1,
                   borderColor: "#67b2e8",
                   borderStyle: "dashed"}}>
-                    <Text style={{color: '#67b2e8', textAlign:'center', fontSize: 16, letterSpacing: 0.2, paddingTop: 10, paddingBottom: 10}}>BUAT ANTRIAN BARU</Text>
+                    <Text style={{fontFamily: 'Myriad Pro Regular',color: '#67b2e8', textAlign:'center', fontSize: 16, letterSpacing: 0.2, paddingTop: 10, paddingBottom: 10}}>BUAT ANTRIAN BARU</Text>
                   </TouchableOpacity>
                 </View>
           </Tab>
           <Tab heading="Berjalan" 
           tabStyle={{backgroundColor:"#003d79"}}
           activeTabStyle={{backgroundColor: "#003d79", color: "#000"}}
-          textStyle={{color:"#67b2e8", fontSize:14, fontWeight:'bold'}}
-          activeTextStyle={{color:"#67b2e8", fontSize:14}}
+          textStyle={{fontFamily: 'Myriad Pro Regular',color:"#67b2e8", fontSize:14, fontWeight:'bold'}}
+          activeTextStyle={{fontFamily: 'Myriad Pro Regular',color:"#67b2e8", fontSize:14}}
           >
                 <ScrollView style={{marginTop:15}}>
                   <List>
-                  <ListItem avatar>
+                    <ListItem avatar
+                    onPress={() => {Actions.OngoingQueue()}}
+                    >
                       <Left>
                         <Thumbnail  source={require('./img/ic_circle_queue_12.png')} />
                       </Left>
@@ -114,34 +115,40 @@ export default class HeaderTextExample extends Component {
           >
             <ScrollView style={{marginTop:15}}>
                   <List>
-                    <ListItem avatar>
+
+                    <ListItem avatar
+                    onPress={() => {Actions.CancelQueue()}}
+                    >
                       <Left>
                         <Thumbnail  source={require('./img/ic_circle_queue_12.png')} />
                       </Left>
                       <Body>
                         <Text>Bank Mandiri Cabang BSD</Text>
                         <Text note>Teller</Text>
-                        <Text style={{position: 'relative', bottom: 0, left: 100, fontSize:14, color:"#ff3b30"}}>DIBATALKAN</Text>
+                        <Text style={{fontFamily: 'Myriad Pro Regular',position: 'relative', bottom: 0, left: 100, fontSize:14, color:"#ff3b30"}}>DIBATALKAN</Text>
                       </Body>
 
                       <Right style={{position: 'absolute', bottom: 0, left: 75}}>
                        <Text style={{color:"#333333",fontSize:14} }>21 JULI 2019</Text>
                       </Right>
                     </ListItem>
-                    <ListItem avatar>
-                      <Left>
-                        <Thumbnail  source={require('./img/ic_circle_queue_6.png')} />
-                      </Left>
-                      <Body>
-                        <Text>Bank Mandiri Cabang Bekasi Timur</Text>
-                        <Text note>Teller</Text>
-                        <Text style={{position: 'relative', bottom: 0, left: 100, fontSize:14, color:"#4cd964"}}>SELESAI</Text>
-                      </Body>
+                    
+                    <ListItem avatar
+                    onPress={() => {Actions.AfterQueue()}}
+                    >
+                          <Left>
+                            <Thumbnail  source={require('./img/ic_circle_queue_6.png')} />
+                          </Left>
+                          <Body>
+                            <Text>Bank Mandiri Cabang Bekasi Timur</Text>
+                            <Text note>Teller</Text>
+                            <Text style={{fontFamily: 'Myriad Pro Regular',position: 'relative', bottom: 0, left: 100, fontSize:14, color:"#4cd964"}}>SELESAI</Text>
+                          </Body>
 
-                      <Right style={{position: 'absolute', bottom: 0, left: 75}}>
-                       <Text style={{color:"#333333",fontSize:14} }>24 JULI 2019</Text>
-                      </Right>
-                    </ListItem>
+                          <Right style={{position: 'absolute', bottom: 0, left: 75}}>
+                          <Text style={{fontFamily: 'Myriad Pro Regular',color:"#333333",fontSize:14} }>24 JULI 2019</Text>
+                          </Right>                      
+                      </ListItem>
                   </List>
                 </ScrollView>
           </Tab>
@@ -166,7 +173,8 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     paddingLeft: 16,
     paddingRight: 16,
-    fontWeight: 'normal'
+    fontWeight: 'normal',
+    fontFamily: 'Myriad Pro Regular'
   },
   headerBold:{
     color: "#ffffff",
@@ -175,7 +183,8 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     paddingLeft: 16,
     paddingRight: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontFamily: 'Myriad Pro Regular'
   },
   heading:{
     backgroundColor: "#003d79",

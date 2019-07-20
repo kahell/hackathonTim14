@@ -14,12 +14,12 @@ export default class RegisterSuccess extends Component {
       <Container>
           <View style={styles.viewImg}>
             <Text style={{textAlign: "center", fontSize: 20, color: "#003d79",
-            marginTop: 88, marginBottom: 42}}>Yay, Akun anda berhasil di buat!</Text>
+            marginTop: 88, marginBottom: 42, fontFamily: 'Myriad Pro Regular'}}>Yay, Akun anda berhasil di buat!</Text>
             <Image
               source={require('./img/success_checklist.png')}
               style={styles.successImg}
             />
-            <Text style={{color:'#b6b8ba', lineHeight: 23, fontSize:14, marginTop: 42, marginLeft: 59, marginRight: 59, textAlign: "center"}}>
+            <Text style={{color:'#b6b8ba', lineHeight: 23, fontSize:14, marginTop: 42, marginLeft: 59, marginRight: 59, textAlign: "center", fontFamily: 'Myriad Pro Regular'}}>
               Silahkan login untuk melakukan aktifitas perbankan anda
             </Text>
             
@@ -39,7 +39,7 @@ export default class RegisterSuccess extends Component {
               bottom:0, right: 20, left: 20}}
               onPress={() => {Actions.refresh({ key: Actions.Login() });}}
               >
-                <Text style={{fontSize: 16, letterSpacing: 0.2, textAlign: "center"}}>LOGIN</Text>
+                <Text style={{fontSize: 16, letterSpacing: 0.2, textAlign: "center",fontFamily: 'Myriad Pro Regular'}}>LOGIN</Text>
               </Button>
           </View>
       </Container>
